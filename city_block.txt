@@ -1,0 +1,20 @@
+% Initialize a 100x100 matrix
+A = zeros(100, 100);
+
+% City block center coordinates
+cx = 50;
+cy = 50;
+
+% Create the City Block distance pattern
+for i = 1:100
+    for j = 1:100
+        % Calculate the City Block distance from the center
+        dist = abs(cx - i) + abs(cy - j);
+        
+        % Set pixel intensity based on the distance
+        A(i, j) = min(dist, 255); % Cap at 255 for visibility
+    end
+end
+
+% Display the City Block distance pattern
+imshow(A, []);

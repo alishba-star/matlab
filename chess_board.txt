@@ -1,0 +1,20 @@
+% Initialize a 100x100 matrix for the chessboard pattern
+A = zeros(100, 100);
+
+% Define the size of the squares on the chessboard
+square_size = 10;
+
+% Create the chessboard using nested loops
+for i = 1:100
+    for j = 1:100
+        % Set the square color based on even or odd row and column
+        if mod(floor(i / square_size) + floor(j / square_size), 2) == 0
+            A(i, j) = 255; % White square
+        else
+            A(i, j) = 0;   % Black square
+        end
+    end
+end
+
+% Display the chessboard pattern
+imshow(A, []);
